@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EmCo Esthetics – Ingredient Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../assets/main.css">
+</head>
+<body>
+
+  <div id="emco-header"></div>
+
+  <main>
+    <section class="section-padding" data-emco-reveal>
+      <div class="page-width">
+        <h1 class="emco-section-title">Pore-Clogging Ingredient Checker</h1>
+        <p class="emco-section-subtitle">
+          Paste your product’s full ingredient list to scan for common pore-clogging culprits.
+        </p>
+
+        <div class="emco-ingredient-checker__layout" data-ingredient-checker>
+          <div class="card-glass emco-ingredient-checker__input-card">
+            <h2>Paste your ingredients</h2>
+            <p style="font-size:0.9rem; color:var(--color-text-muted);">
+              Example: Water, Isopropyl Myristate, Glycerin, Coconut Oil...
+            </p>
+            <textarea class="emco-textarea" placeholder="Paste your full ingredient list here..."></textarea>
+            <button type="button" class="btn-iris" data-check-ingredients style="margin-top:1rem;">
+              Check for pore-cloggers
+            </button>
+          </div>
+          <div class="card-glass emco-ingredient-checker__results-card">
+            <h2>Results</h2>
+            <div data-ingredient-results>
+              <p>Paste your list and click the button to see results ✨</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="emco-footer"></div>
+
+  <script src="../assets/theme.js"></script>
+</body>
+</html>

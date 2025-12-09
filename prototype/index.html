@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EmCo Esthetics – Acne & Glow Studio | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../assets/main.css">
+</head>
+<body>
+
+  <!-- Shared Header placeholder (loaded via JS) -->
+  <div id="emco-header"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="emco-hero-video section-padding">
+      <div class="emco-hero-video__media">
+        <video
+          class="emco-hero-video__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="../assets/images/vibes/hero-fallback.jpg"
+        >
+          <!-- Replace with your real video file -->
+          <source src="../assets/video/hero-loop.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="emco-hero-video__overlay"></div>
+      </div>
+
+      <div class="page-width emco-hero-video__content">
+        <!-- Starts hidden, then JS adds --visible class after 5s -->
+        <div class="emco-hero-video__text card-glass">
+          <p class="emco-hero-video__eyebrow">Cincinnati Acne + Glow Studio</p>
+          <h1 class="emco-hero-video__heading">Clear skin, trippy glow.</h1>
+          <p class="emco-hero-video__subheading">
+            Results-driven acne management, Hydrafacial, and customized skincare plans with Emily at EmCo Esthetics.
+          </p>
+          <!-- Buttons fade in slightly after the text -->
+          <div class="emco-hero-video__buttons">
+            <a href="https://your-booking-link.com" class="btn-iris btn-iris--pop">Book Now</a>
+            <a href="services.html" class="btn-ghost">View services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand strip directly under hero -->
+    <section class="emco-header__brand-strip">
+      <div class="page-width emco-brand-strip__inner">
+        <span class="emco-brand-strip__label">Trusted Partners:</span>
+
+        <div class="emco-brand-strip__track">
+          <div class="emco-brand-strip__scroll">
+            <!-- Sequence A -->
+            <img
+              src="../assets/images/brand-logos/logo-hydrafacial.png"
+              alt="Hydrafacial"
+              class="emco-brand-strip__logo"
+            >
+            <img
+              src="../assets/images/brand-logos/logo-glymed.png"
+              alt="GlyMed+"
+              class="emco-brand-strip__logo"
+            >
+            <img
+              src="../assets/images/brand-logos/logo-facereality.png"
+              alt="Face Reality"
+              class="emco-brand-strip__logo"
+            >
+            <img
+              src="../assets/images/brand-logos/logo-mixi.png"
+              alt="Mixi Skincare"
+              class="emco-brand-strip__logo"
+            >
+            <img
+              src="../assets/images/brand-logos/logo-cleanskinclub.png"
+              alt="Clean Skin Club"
+              class="emco-brand-strip__logo"
+            >
+
+            <!-- Sequence A repeated for seamless loop -->
+            <img
+              src="../assets/images/brand-logos/logo-hydrafacial.png"
+              alt=""
+              aria-hidden="true"
+              class="emco-brand-strip__logo"
+            >
+            <img
+              src="../assets/images/brand-logos/logo-glymed.png"
+              alt=""
+              aria-hidden="true"
+              class="emco-brand-strip__logo"
+            >
+            <img
+              src="../assets/images/brand-logos/logo-facereality.png"
+              alt=""
+              aria-hidden="true"
+              class="emco-brand-strip__logo"
+            >
+            <img
+              src="../assets/images/brand-logos/logo-mixi.png"
+              alt=""
+              aria-hidden="true"
+              class="emco-brand-strip__logo"
+            >
+            <img
+              src="../assets/images/brand-logos/logo-cleanskinclub.png"
+              alt=""
+              aria-hidden="true"
+              class="emco-brand-strip__logo"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured services -->
+    <section class="section-padding" data-emco-reveal>
+      <div class="page-width">
+        <h2 class="emco-section-title">Choose your glow path</h2>
+        <p class="emco-section-subtitle">
+          Acne Bootcamp, Hydrafacial, and results-driven facials designed around your skin, lifestyle, and goals.
+        </p>
+        <div class="emco-featured-services__grid">
+          <article class="card-glass emco-service-card">
+            <span class="emco-service-card__badge">Flagship program</span>
+            <h3>Acne Bootcamp</h3>
+            <p class="emco-service-card__tagline">A 12+ week guided program to clear acne and prevent future breakouts.</p>
+            <p>Includes customized Face Reality regimen, regular check-ins, and lifestyle coaching.</p>
+            <div class="emco-service-card__cta">
+              <a href="acne-bootcamp.html" class="btn-ghost">Learn more</a>
+              <a href="https://your-booking-link.com">Start consult →</a>
+            </div>
+          </article>
+
+          <article class="card-glass emco-service-card">
+            <span class="emco-service-card__badge">Glow facial</span>
+            <h3>Hydrafacial</h3>
+            <p class="emco-service-card__tagline">Deep cleanse, extraction, and juicy hydration in one treatment.</p>
+            <p>Perfect before events or as a reset for dull, congested skin.</p>
+            <div class="emco-service-card__cta">
+              <a href="hydrafacial.html" class="btn-ghost">Learn more</a>
+              <a href="https://your-booking-link.com">Book Hydrafacial →</a>
+            </div>
+          </article>
+
+          <article class="card-glass emco-service-card">
+            <span class="emco-service-card__badge">Custom facials</span>
+            <h3>Results-Driven Facials</h3>
+            <p class="emco-service-card__tagline">Treat texture, pigment, and barrier health while keeping things chill.</p>
+            <p>Personalized facials targeting your current concern with minimal downtime.</p>
+            <div class="emco-service-card__cta">
+              <a href="results-facials.html" class="btn-ghost">Explore facials</a>
+              <a href="https://your-booking-link.com">Book facial →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results teaser -->
+    <section class="section-padding" data-emco-reveal>
+      <div class="page-width emco-results-teaser">
+        <div>
+          <h2 class="emco-section-title">Real skin, real results</h2>
+          <p class="emco-section-subtitle">
+            From inflamed breakouts to smooth, glowy skin—peep a few real transformations from EmCo clients.
+          </p>
+          <p>
+            Every skin tells a different story. Emily builds plans that respect your budget, lifestyle, and nervous system while still getting you results.
+          </p>
+          <a href="results.html" class="btn-iris">View full results gallery</a>
+        </div>
+
+        <div class="emco-results-teaser__images">
+          <img src="https://placehold.co/400x450" alt="Before/after example 1">
+          <img src="https://placehold.co/400x450" alt="Before/after example 2">
+          <img src="https://placehold.co/400x450" alt="Before/after example 3">
+          <img src="https://placehold.co/400x450" alt="Before/after example 4">
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding" data-emco-reveal>
+      <div class="page-width">
+        <h2 class="emco-section-title">Client love</h2>
+        <div class="emco-testimonials-grid">
+          <article class="card-glass emco-testimonial">
+            <p>“I’ve tried everything for my acne. Emily was the first person who actually listened, educated me, and helped my skin calm down.”</p>
+            <p class="emco-testimonial__name">– A., Acne Bootcamp client</p>
+          </article>
+          <article class="card-glass emco-testimonial">
+            <p>“My Hydrafacial with EmCo is my favorite reset. I always leave glowing and never feel rushed or judged.”</p>
+            <p class="emco-testimonial__name">– S., Hydrafacial client</p>
+          </article>
+          <article class="card-glass emco-testimonial">
+            <p>“The ingredient education changed my whole routine. I tossed a few pore-clogging faves and my skin finally stopped freaking out.”</p>
+            <p class="emco-testimonial__name">– J., Virtual product client</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acne Bootcamp teaser -->
+    <section class="section-padding" data-emco-reveal>
+      <div class="page-width emco-featured-services__grid">
+        <div class="card-glass emco-service-card">
+          <span class="emco-service-card__badge">Program highlight</span>
+          <h2>Acne Bootcamp: your clear-skin era</h2>
+          <p>
+            A structured, supported program using Face Reality protocols, lifestyle coaching, and regular check-ins to help you clear acne without guessing alone.
+          </p>
+          <ul>
+            <li>Customized product routine</li>
+            <li>Bi-weekly adjustments and check-ins</li>
+            <li>Education on diet, lifestyle, and triggers</li>
+          </ul>
+          <div class="emco-service-card__cta">
+            <a href="acne-bootcamp.html" class="btn-iris">Explore Acne Bootcamp</a>
+            <a href="https://your-booking-link.com">Book a consult →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chatbot widget -->
+  <div class="emco-chatbot" data-chatbot-widget>
+    <button class="emco-chatbot__toggle" data-chatbot-toggle aria-expanded="false" aria-label="Open EmBot chat">
+      💬
+    </button>
+    <div class="card-glass emco-chatbot__panel" data-chatbot-panel>
+      <div class="emco-chatbot__header">
+        <strong>EmBot</strong>
+        <p style="font-size:0.8rem; color:var(--color-text-muted); margin:0;">Quick questions about EmCo</p>
+      </div>
+      <div class="emco-chatbot__messages" data-chatbot-messages></div>
+      <form class="emco-chatbot__form" data-chatbot-form>
+        <input type="text" class="emco-input emco-chatbot__input" data-chatbot-input placeholder="Ask me anything..." />
+        <button type="submit" class="btn-iris" style="padding-inline:1rem;">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Email popup – homepage only -->
+  <div class="emco-email-popup" data-email-popup>
+    <div class="card-glass emco-email-popup__content">
+      <button class="emco-email-popup__close" data-email-popup-close aria-label="Close popup">✕</button>
+      <h2 class="emco-section-title">15% off your first order</h2>
+      <p class="emco-section-subtitle">
+        Join the Glow Letters list to get 15% off your first online product order + insider acne tips.
+      </p>
+      <form>
+        <input type="email" class="emco-input" placeholder="Enter your email" required>
+        <button type="submit" class="btn-iris" style="margin-top:1rem;">Get my code</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shared Footer placeholder -->
+  <div id="emco-footer"></div>
+
+  <script src="../assets/theme.js"></script>
+</body>
+</html>

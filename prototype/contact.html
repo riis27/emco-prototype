@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | EmCo Esthetics – Book Your Glow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Contact EmCo Esthetics to book acne-focused facials, Hydrafacial treatments, and custom skincare plans. Reach out with questions or booking requests."
+  >
+  <link rel="stylesheet" href="../assets/main.css">
+</head>
+<body>
+
+  <!-- Shared Header placeholder (loaded via JS from partials/header.html) -->
+  <div id="emco-header"></div>
+
+  <main>
+    <!-- CONTACT HERO / INTRO -->
+    <section class="section-padding" data-emco-reveal>
+      <div class="page-width card-glass emco-page-block">
+        <h1 class="emco-section-title">Let’s talk about your skin.</h1>
+        <p class="emco-section-subtitle">
+          Whether you’re ready to book, curious about Acne Bootcamp, or just need help decoding your routine,
+          this is your portal into EmCo Esthetics.
+        </p>
+        <p>
+          Fill out the form below, and I’ll get back to you as soon as possible during business hours. For faster booking,
+          you can always head straight to the online booking link.
+        </p>
+        <div style="margin-top:1rem;">
+          <a href="https://your-booking-link.com" class="btn-iris btn-iris--pop">Book online</a>
+          <a href="faq.html" class="btn-ghost">View FAQs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT LAYOUT: FORM + INFO -->
+    <section class="section-padding" data-emco-reveal>
+      <div class="page-width">
+        <div class="card-glass emco-page-block emco-contact-layout">
+          <!-- Contact form -->
+          <div>
+            <h2>Send a message</h2>
+            <p style="color:var(--color-text-muted); margin-bottom:1.25rem;">
+              Tell me a bit about your skin, your goals, and what you’re curious about. The more detail you share, the
+              easier it is for me to recommend the right service or plan.
+            </p>
+            <form>
+              <div style="margin-bottom:1rem;">
+                <label for="name" style="display:block; font-weight:600; margin-bottom:0.3rem;">Name</label>
+                <input id="name" type="text" class="emco-input" placeholder="First & last name" required>
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label for="email" style="display:block; font-weight:600; margin-bottom:0.3rem;">Email</label>
+                <input id="email" type="email" class="emco-input" placeholder="you@example.com" required>
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label for="phone" style="display:block; font-weight:600; margin-bottom:0.3rem;">Phone (optional)</label>
+                <input id="phone" type="tel" class="emco-input" placeholder="(555) 555-5555">
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label for="reason" style="display:block; font-weight:600; margin-bottom:0.3rem;">What are you reaching out about?</label>
+                <select id="reason" class="emco-input" style="border-radius:999px;">
+                  <option value="">Choose one</option>
+                  <option value="acne-bootcamp">Acne Bootcamp</option>
+                  <option value="hydrafacial">Hydrafacial</option>
+                  <option value="results-facial">Results-driven facial</option>
+                  <option value="products">Product recommendations</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+
+              <div style="margin-bottom:1.25rem;">
+                <label for="message" style="display:block; font-weight:600; margin-bottom:0.3rem;">Tell me about your skin</label>
+                <textarea
+                  id="message"
+                  class="emco-textarea"
+                  placeholder="What are you currently dealing with (acne, sensitivity, dark marks, texture, etc.)? What have you already tried?"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-iris btn-iris--pop">Send message</button>
+            </form>
+          </div>
+
+          <!-- Studio info / vibe -->
+          <aside>
+            <h2>Studio details</h2>
+            <p style="color:var(--color-text-muted);">
+              EmCo Esthetics is a cozy, one-on-one studio space designed for nervous-system-friendly, results-driven skin care.
+            </p>
+
+            <div style="margin-top:1rem; margin-bottom:1.25rem;">
+              <h3 style="margin-bottom:0.3rem;">Location</h3>
+              <p style="margin:0;">
+                EmCo Esthetics<br>
+                123 Glow Street<br>
+                Your City, ST 00000
+              </p>
+            </div>
+
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="margin-bottom:0.3rem;">Hours</h3>
+              <p style="margin:0;">
+                Tuesday – Friday: 10am – 6pm<br>
+                Saturday: 10am – 3pm<br>
+                Closed Sunday & Monday
+              </p>
+            </div>
+
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="margin-bottom:0.3rem;">Contact</h3>
+              <p style="margin:0;">
+                Email: <a href="mailto:info@emcoesthetics.com">info@emcoesthetics.com</a><br>
+                Instagram: <a href="https://instagram.com/yourhandle" target="_blank">@emcoesthetics</a>
+              </p>
+            </div>
+
+            <!-- Mini map / placeholder image -->
+            <div class="card-glass emco-page-block" style="padding:1rem; margin-top:1.25rem;">
+              <!-- Replace this with an actual embedded Google Map or studio photo -->
+              <img
+                src="../assets/images/contact/studio-map-placeholder.jpg"
+                alt="Map or studio location preview"
+                style="border-radius:14px;"
+              >
+              <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:0.5rem;">
+                Exact address and directions will be sent in your confirmation email after booking.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer placeholder (loaded via JS from partials/footer.html) -->
+  <div id="emco-footer"></div>
+
+  <script src="../assets/theme.js"></script>
+</body>
+</html>

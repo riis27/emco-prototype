@@ -1,0 +1,1191 @@
+:root {
+  /* Background + sections */
+  --color-bg: #caa3fa;          /* soft lilac */
+  --color-bg-alt: #b488f9;      /* deeper orchid */
+  --color-surface: rgba(255, 255, 255, 0.26); /* glassy section/card */
+  --color-surface-soft: rgba(255, 255, 255, 0.18);
+
+  /* Borders + text */
+  --color-border: rgba(255, 202, 255, 0.85);
+  --color-text: #1b1028;        /* deep plum for legible text */
+  --color-text-muted: #4b325e;  /* softer plum */
+
+  /* Your accent palette */
+  --color-accent-1: #ffcaff;    /* soft pink glow */
+  --color-accent-2: #ff82b8;    /* bright candy pink */
+  --color-accent-3: #09bdaf;    /* teal (interpreting 9bdaf as 09bdaf) */
+  --color-accent-4: #00e8f8;    /* aqua glow */
+
+  /* Iridescent gradient “family” */
+  --color-iris-1: var(--color-accent-1);
+  --color-iris-2: var(--color-accent-2);
+  --color-iris-3: var(--color-accent-4);
+  --color-iris-4: var(--color-accent-3);
+
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 18px 40px rgba(27, 16, 40, 0.45);
+  --transition-fast: 180ms ease-out;
+  --font-heading: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, #ffcaff 0, #caa3fa 30%, #b488f9 65%, #8b63e0 100%);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-accent-2);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+.page-width {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section-padding {
+  padding-block: 4rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+}
+
+/* Utility */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.32)
+  );
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+/* Reusable padded block for page content */
+.emco-page-block {
+  padding: 1.8rem 2rem;
+}
+
+/* Buttons – with spacing + animations */
+
+.btn-iris,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  margin: 0.25rem; /* spacing so they don't sit flush to other elements */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Main CTAs: iridescent gradient using your palette */
+.btn-iris {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: #020617;
+  background-image: linear-gradient(135deg,
+    var(--color-iris-1),
+    var(--color-iris-2),
+    var(--color-iris-3)
+  );
+  box-shadow: 0 0 0 1px rgba(148, 163, 255, 0.5),
+              0 0 35px rgba(125, 211, 252, 0.4);
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast),
+              filter var(--transition-fast);
+}
+
+.btn-iris:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.05);
+}
+
+
+/* Pop-style variant for some buttons */
+.btn-iris--pop:hover {
+  transform: translateY(-2px) scale(1.06) rotate(-1deg);
+}
+
+/* Ghost-style button: softer, outline style */
+.btn-ghost {
+  border: 1px solid rgba(255, 202, 255, 0.9);
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 202, 255, 0.42),
+    rgba(255, 255, 255, 0.05)
+  );
+  color: var(--color-text);
+  transition:
+    background 180ms ease-out,
+    transform 180ms ease-out,
+    box-shadow 180ms ease-out;
+}
+
+.btn-ghost:hover {
+  background: radial-gradient(
+    circle at top right,
+    rgba(0, 232, 248, 0.32),
+    rgba(255, 255, 255, 0.02)
+  );
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(27, 16, 40, 0.45);
+}
+
+.emco-input,
+.emco-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 202, 255, 0.8);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.emco-textarea {
+  border-radius: 1rem;
+  min-height: 140px;
+}
+
+/* Scroll reveal animation */
+
+[data-emco-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 320ms ease-out, transform 320ms ease-out;
+}
+
+.emco-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HEADER */
+
+.emco-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(22px);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.26)
+  );
+  border-bottom: 1px solid rgba(255, 202, 255, 0.8);
+}
+
+.emco-header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0.9rem 1.5rem;
+}
+
+.emco-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.emco-logo-image {
+  height: 72px;
+  width: auto;
+  border-radius: 12px;
+}
+
+/* Nav */
+
+.emco-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.emco-header__cta {
+  font-size: 0.8rem;
+}
+
+.emco-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.emco-nav__list a,
+.emco-nav__dropdown-toggle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+}
+
+.emco-nav__item--has-dropdown {
+  position: relative;
+}
+
+.emco-nav__dropdown-toggle {
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.emco-nav__dropdown {
+  position: absolute;
+  top: 150%;
+  left: 0;
+  min-width: 220px;
+  padding: 0.75rem;
+  margin: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 255, 255, 0.82)
+  );
+  border-radius: 16px;
+  border: 1px solid rgba(255, 202, 255, 0.9);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 20px 35px rgba(27, 16, 40, 0.4);
+  z-index: 30;
+}
+
+.emco-nav__dropdown a {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  color: var(--color-text);
+}
+
+.emco-nav__dropdown--open {
+  display: flex;
+}
+
+/* Mobile nav toggle */
+
+.emco-header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 202, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+.emco-header__toggle span {
+  display: block;
+  height: 2px;
+  width: 18px;
+  background: var(--color-accent-2);
+  border-radius: 999px;
+}
+
+/* 🔮 Brand strip with continuous scroll */
+
+.emco-header__brand-strip {
+  border-top: 1px solid rgba(255, 202, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 202, 255, 0.6);
+  background:
+    radial-gradient(circle at left,
+      rgba(255, 202, 255, 0.45),
+      transparent 60%),
+    radial-gradient(circle at right,
+      rgba(0, 232, 248, 0.38),
+      transparent 60%);
+}
+
+.emco-brand-strip__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.5rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.emco-brand-strip__label {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.emco-brand-strip__track {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* This is the marquee strip that actually moves */
+.emco-brand-strip__scroll {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content; /* shrink-wrap to logo content */
+  animation: emco-scroll-brands 26s linear infinite;
+}
+
+.emco-brand-strip__logo {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 202, 255, 0.8));
+  opacity: 0.95;
+}
+
+/* Scroll entire strip left by half its width for a seamless loop */
+@keyframes emco-scroll-brands {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* FOOTER */
+
+.emco-footer {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(202, 163, 250, 0.9),
+    rgba(180, 136, 249, 1)
+  );
+  border-top: 1px solid rgba(255, 202, 255, 0.95);
+}
+
+.emco-footer__inner {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.emco-footer__heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+}
+
+.emco-footer__social a {
+  margin-right: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 202, 255, 0.9);
+  padding: 0;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 202, 255, 0.7)
+  );
+  transition:
+    background 160ms ease-out,
+    transform 160ms ease-out,
+    box-shadow 160ms ease-out;
+}
+
+.emco-footer__social a:hover {
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 232, 248, 0.35),
+    rgba(255, 202, 255, 0.9)
+  );
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(27, 16, 40, 0.4);
+}
+
+.emco-footer__social svg {
+  width: 18px;
+  height: 18px;
+  fill: #1b1028;
+}
+
+.emco-footer__bottom {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 202, 255, 0.9);
+}
+
+.emco-footer__bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+  font-size: 0.8rem;
+}
+
+/* HERO VIDEO */
+
+.emco-hero-video {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.emco-hero-video__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.emco-hero-video__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1);
+}
+
+/* Soft overlay, but let the new gradient vibe shine through */
+.emco-hero-video__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left,
+      rgba(255, 202, 255, 0.4),
+      transparent 60%),
+    radial-gradient(circle at bottom right,
+      rgba(0, 232, 248, 0.32),
+      transparent 60%),
+    linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 255, 255, 0.32));
+}
+
+.emco-hero-video__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Timed fade-in for hero text + buttons */
+
+.emco-hero-video__text {
+  max-width: 560px;
+  padding: 2rem 2.4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 800ms ease-out, transform 800ms ease-out;
+}
+
+.emco-hero-video__text--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.emco-hero-video__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 800ms ease-out, transform 800ms ease-out;
+}
+
+.emco-hero-video__buttons--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.emco-hero-video__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.emco-hero-video__heading {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 14px rgba(255, 202, 255, 0.8);
+}
+
+.emco-hero-video__subheading {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* HOME – FEATURED SERVICES */
+
+.emco-section-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.emco-section-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.emco-featured-services__grid {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.emco-service-card {
+  padding: 1.6rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.emco-service-card__badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+}
+
+.emco-service-card h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+}
+
+.emco-service-card__tagline {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.emco-service-card__cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* Home: Results teaser & testimonials */
+
+.emco-results-teaser {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.emco-results-teaser__images {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 0.5rem;
+}
+
+.emco-results-teaser__images img {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 202, 255, 0.9);
+}
+
+.emco-testimonials-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.emco-testimonial {
+  padding: 1.4rem 1.6rem;
+  font-size: 0.95rem;
+}
+
+.emco-testimonial__name {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* ABOUT PAGE */
+
+.emco-about-hero {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.emco-about-hero__intro {
+  position: relative;
+  padding: 2rem 2.4rem;
+}
+
+.emco-about-hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.emco-about-hero__heading {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.emco-about-hero__tagline {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.emco-profile-photo {
+  position: relative;
+  padding: 2rem;
+}
+
+.emco-profile-photo__frame {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 202, 255, 0.9);
+}
+
+.emco-profile-photo__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.emco-profile-photo__badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 202, 255, 0.9);
+  font-size: 0.78rem;
+  color: var(--color-text);
+}
+
+/* Iridescent orbs – unchanged in spirit */
+.emco-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(20px);
+  opacity: 0.6;
+  animation: floatOrb 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.emco-orb--pink {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(249,168,255,0.8), transparent 70%);
+  top: -30px;
+  right: -40px;
+}
+
+.emco-orb--blue {
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(96,165,250,0.9), transparent 70%);
+  bottom: -50px;
+  left: -40px;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-12px) translateX(8px);
+  }
+  100% {
+    transform: translateY(8px) translateX(-6px);
+  }
+}
+
+.emco-about-sections {
+  margin-top: 3rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.emco-about-card {
+  padding: 1.8rem 2rem;
+}
+
+/* Services / accordions */
+
+.emco-services-list {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.emco-accordion {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 202, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem 1.2rem;
+}
+
+.emco-accordion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.emco-accordion__title {
+  font-weight: 600;
+}
+
+.emco-accordion__price {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.emco-accordion__chevron {
+  font-size: 1rem;
+}
+
+.emco-accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 200ms ease-out;
+}
+
+.emco-accordion--open .emco-accordion__content {
+  max-height: 400px;
+  margin-top: 0.75rem;
+}
+
+/* Results – before/after slider + cards */
+
+.emco-before-after {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 202, 255, 0.9);
+}
+
+.emco-before-after__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emco-before-after__image-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.emco-before-after__image-before {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.emco-before-after__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.95);
+  cursor: ew-resize;
+}
+
+.emco-before-after__handle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 2px solid #1b1028;
+  background: linear-gradient(
+    135deg,
+    var(--color-iris-1),
+    var(--color-iris-2),
+    var(--color-iris-3)
+  );
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px rgba(255, 202, 255, 0.9);
+}
+
+/* Results page layout */
+
+.emco-results-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.emco-result-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.emco-result-card__info h2 {
+  margin-top: 0;
+}
+
+.emco-result-card__meta {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* Ingredient checker */
+
+.emco-ingredient-checker__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.emco-ingredient-checker__input-card {
+  padding: 1.6rem 1.8rem;
+}
+
+.emco-ingredient-checker__results-card {
+  padding: 1.6rem 1.8rem;
+}
+
+.emco-ingredient-results__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.emco-ingredient-results__list li {
+  margin-bottom: 1rem;
+}
+
+.emco-ingredient-results__name {
+  display: block;
+  font-weight: 600;
+}
+
+.emco-ingredient-results__level {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.emco-ingredient-results__note {
+  font-size: 0.9rem;
+}
+
+.emco-ingredient-results--ok h3 {
+  color: #09bdaf;
+}
+
+/* Chatbot widget */
+
+.emco-chatbot {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 50;
+}
+
+.emco-chatbot__toggle {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background-image: linear-gradient(
+    135deg,
+    var(--color-iris-1),
+    var(--color-iris-2),
+    var(--color-iris-3)
+  );
+  box-shadow: 0 0 25px rgba(0, 232, 248, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.emco-chatbot__panel {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+  width: 320px;
+  max-height: 480px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+.emco-chatbot--open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.emco-chatbot__header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 202, 255, 0.9);
+}
+
+.emco-chatbot__messages {
+  padding: 0.75rem 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.emco-chatbot__message {
+  margin-bottom: 0.7rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+}
+
+.emco-chatbot__message--bot {
+  background: rgba(27, 16, 40, 0.92);
+  border: 1px solid rgba(255, 202, 255, 0.9);
+  color: #fdfbff;
+}
+
+.emco-chatbot__message--user {
+  background: linear-gradient(
+    135deg,
+    var(--color-iris-1),
+    var(--color-iris-2)
+  );
+  color: #1b1028;
+  margin-left: auto;
+}
+
+.emco-chatbot__form {
+  padding: 0.5rem 0.75rem 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.emco-chatbot__input {
+  flex: 1;
+}
+
+/* Email popup – top middle */
+
+.emco-email-popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4.5rem;
+  background: rgba(27, 16, 40, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-out;
+  z-index: 40;
+}
+
+.emco-email-popup--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emco-email-popup__content {
+  max-width: 420px;
+  margin-inline: 1.5rem;
+  position: relative;
+}
+
+.emco-email-popup__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* FAQs */
+
+.emco-faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.emco-faq-item {
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 202, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.emco-faq-item__question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.emco-faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 200ms ease-out;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.emco-faq-item--open .emco-faq-item__answer {
+  max-height: 300px;
+  margin-top: 0.5rem;
+}
+
+/* Contact */
+
+.emco-contact-layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .emco-header__nav {
+    position: fixed;
+    inset-inline: 0.75rem;
+    top: 4.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 202, 255, 0.96)
+    );
+    border-radius: 18px;
+    border: 1px solid rgba(255, 202, 255, 0.9);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast),
+                transform var(--transition-fast);
+  }
+
+  .emco-header__nav--open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .emco-header__toggle {
+    display: flex;
+  }
+
+  .emco-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .emco-results-teaser,
+  .emco-ingredient-checker__layout,
+  .emco-contact-layout,
+  .emco-about-hero,
+  .emco-result-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .emco-hero-video {
+    min-height: 70vh;
+  }
+
+  .emco-hero-video__text {
+    padding: 1.5rem 1.4rem;
+  }
+
+  .emco-footer__bottom-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .emco-email-popup {
+    padding-top: 3.5rem;
+  }
+}

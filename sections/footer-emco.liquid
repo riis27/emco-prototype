@@ -1,0 +1,79 @@
+{% comment %}
+sections/footer-emco.liquid
+Custom EmCo footer with newsletter
+{% endcomment %}
+<footer class="emco-footer" role="contentinfo">
+  <div class="page-width emco-footer__inner">
+    <div class="emco-footer__col">
+      <h3 class="emco-footer__heading">EmCo Esthetics</h3>
+      <p>3825 Edwards Rd, Suite #25<br>Cincinnati, OH</p>
+      <p><strong>Hours</strong><br>{{ section.settings.hours | newline_to_br }}</p>
+    </div>
+
+    <div class="emco-footer__col">
+      <h3 class="emco-footer__heading">Contact</h3>
+      <p><a href="mailto:info@emcoesthetics.com">info@emcoesthetics.com</a></p>
+      <p><a href="tel:15136173477">(513) 617-3477</a></p>
+      <div class="emco-footer__social">
+        <a href="{{ section.settings.instagram_url }}" aria-label="Instagram">IG</a>
+        <a href="{{ section.settings.tiktok_url }}" aria-label="TikTok">TT</a>
+        <a href="{{ section.settings.facebook_url }}" aria-label="Facebook">FB</a>
+      </div>
+    </div>
+
+    <div class="emco-footer__col">
+      <h3 class="emco-footer__heading">Glow Letters</h3>
+      <p>Subscribe for acne-safe tips, new treatments & flash promos.</p>
+      {% form 'customer', class: 'emco-footer__newsletter-form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter, emco-footer">
+        <label for="FooterNewsletterEmail" class="visually-hidden">Email address</label>
+        <input
+          id="FooterNewsletterEmail"
+          type="email"
+          name="contact[email]"
+          class="emco-input"
+          placeholder="Enter your email"
+          required
+        >
+        <button type="submit" class="btn-iris">Subscribe</button>
+      {% endform %}
+    </div>
+  </div>
+
+  <div class="emco-footer__bottom">
+    <div class="page-width emco-footer__bottom-inner">
+      <p>© {{ 'now' | date: '%Y' }} {{ shop.name }} • All Rights Reserved</p>
+      <a href="/policies/privacy-policy">Privacy Policy</a>
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "EmCo Footer",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "hours",
+        "label": "Business hours",
+        "default": "By appointment only"
+      },
+      {
+        "type": "url",
+        "id": "instagram_url",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "tiktok_url",
+        "label": "TikTok URL"
+      },
+      {
+        "type": "url",
+        "id": "facebook_url",
+        "label": "Facebook URL"
+      }
+    ]
+  }
+  {% endschema %}
+</footer>
+
