@@ -39,8 +39,8 @@ async function injectHeaderFooter() {
   }
 
   // From prototype/*.html, these are relative paths:
-  await loadInto(headerContainer, 'partials/header.html');
-  await loadInto(footerContainer, 'partials/footer.html');
+  await loadInto(headerContainer, 'prototype/partials/header.html');
+  await loadInto(footerContainer, 'prototype/partials/footer.html');
 }
 
 /**
